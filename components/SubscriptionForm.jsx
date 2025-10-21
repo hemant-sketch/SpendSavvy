@@ -1,12 +1,10 @@
 'use client'
 
 import { useAuth } from "@/context/AuthContext"
-import { useState } from "react"
 
 export default function SubscriptionForm(props) {
     const { onSubmit, closeInput, formData, handleChangeInput, handleResetForm } = props
     const { handleAddSubscription } = useAuth()
-
 
     function handleFormSumbit(e) {
         e.preventDefault() // prevents the random as behavior of reloading the webpage
@@ -48,7 +46,7 @@ export default function SubscriptionForm(props) {
                 <label>
                     <span>Currency</span>
                     <select value={formData.currency} onChange={handleChangeInput} name="currency">
-                        {['USD', 'EUR', 'GBP', 'NZD', "AUD", 'Other'].map((cur, curIndex) => {
+                        {['USD', 'INR', 'GBP', 'EUR', "AUD", 'Other'].map((cur, curIndex) => {
                             return (
                                 <option key={curIndex}>{cur}</option>
                             )
@@ -71,7 +69,7 @@ export default function SubscriptionForm(props) {
                 <label>
                     <span>Payment Method</span>
                     <select value={formData.paymentMethod} onChange={handleChangeInput} name="paymentMethod">
-                        {['Credit Card', 'Debit Card', 'Paypal', 'Bank Transfer', 'Other'].map((cur, curIndex) => {
+                        {['Credit Card', 'Debit Card', 'UPI', 'Bank Transfer', 'Other'].map((cur, curIndex) => {
                             return (
                                 <option key={curIndex}>{cur}</option>
                             )

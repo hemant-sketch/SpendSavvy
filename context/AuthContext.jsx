@@ -20,10 +20,12 @@ export function AuthProvider(props) {
     const [loading, setLoading] = useState(false)
 
     function signup(email, password) {
+        console.log("this too working");
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     function login(email, password) {
+        console.log("this too working");
         return signInWithEmailAndPassword(auth, email, password)
     }
 
